@@ -1,0 +1,127 @@
+[
+    {
+      "id": "MCH-001",
+      "machine_name": "CNC Lathe X500",
+      "type": "CNC Lathe",
+      "details": {
+        "power_kw": 45.2,
+        "location": "Plant A - Section 3",
+        "last_maintenance": "2024-03-10",
+        "issues": ["Overheating", "High vibration"],
+        "status": "Operational",
+        "logs": [
+          "2024-03-12: Coolant replaced",
+          "2024-03-15: Unexpected downtime for 3 hours"
+        ]
+      }
+    },
+    {
+      "machine_id": "Machine_XYZ_987",
+      "machine_name": "Hydraulic Press Titan-900",
+      "category": "Hydraulic Press",
+      "info": {
+        "power_usage": "120kW",
+        "location": "Factory B - Unit 5",
+        "errors": [
+          {"code": "E104", "desc": "Hydraulic pressure drop"},
+          {"code": "E203", "desc": "Oil leakage detected"}
+        ],
+        "maintenance_schedule": {
+          "next_due": "2024-06-15",
+          "last_serviced": "2024-02-28"
+        }
+      }
+    },
+    {
+      "id": "welding_22",
+      "machine_name": "Welding Station WS-220",
+      "meta": {
+        "power": "5.5 kW",
+        "site": "Warehouse 2",
+        "log_history": [
+          {"date": "2024-03-02", "activity": "Nozzle replaced"},
+          {"date": "2024-03-10", "activity": "Welding wire changed"}
+        ],
+        "issues": []
+      }
+    },
+    {
+      "id": "MACH-09876",
+      "machine_name": "Assembly Robot AR-5",
+      "desc": "Assembly Robot",
+      "runtime_hours": 5321,
+      "energy": "35.6 kW",
+      "faults": ["Minor misalignment detected"],
+      "activity": [
+        "2024-03-14: Realigned axis",
+        "2024-03-17: Firmware update"
+      ]
+    },
+    {
+      "machine_code": "HVAC-4455",
+      "machine_name": "HVAC System ChillMax-4455",
+      "specs": {
+        "energy_consumption": "75 kW",
+        "temperature_control": "Active",
+        "alerts": [
+          {"type": "Temperature Spike", "value": "88°C", "timestamp": "2024-03-18T14:23:00Z"}
+        ]
+      },
+      "status": "Under Maintenance"
+    },
+    {
+      "id": "Boiler_77",
+      "machine_name": "Industrial Boiler B-77",
+      "details": {
+        "power": "200 kW",
+        "pressure": "15 bar",
+        "maintenance_log": ["Safety valve replaced on 2024-02-20"],
+        "warnings": ["Pressure fluctuation detected"]
+      }
+    },
+    {
+      "id": "Pump-3321",
+      "machine_name": "Centrifugal Pump CP-3321",
+      "category": "Centrifugal Pump",
+      "parameters": {
+        "flow_rate": "250 m³/h",
+        "vibration_level": "High",
+        "temperature": "60°C"
+      },
+      "maintenance_notes": "Motor bearings replaced on 2024-03-05"
+    },
+    {
+      "id": "Gen-Backup-12",
+      "machine_name": "Backup Diesel Generator DG-12",
+      "description": "Backup Diesel Generator",
+      "power": "500 kW",
+      "fuel_level": "70%",
+      "operation_status": "Idle",
+      "logs": [
+        "Tested on 2024-03-01: Normal operation",
+        "Battery check on 2024-03-12: Voltage low"
+      ]
+    },
+    {
+      "id": "Small-Drill-04",
+      "machine_name": "Portable Drill PD-04",
+      "info": {
+        "power": "1.2 kW",
+        "location": "Tool Station 2",
+        "recent_activity": ["2024-03-15: Drill bit replaced"],
+        "errors": null
+      }
+    },
+    {
+      "id": "LaserCutter-99",
+      "machine_name": "Laser Cutter LC-99",
+      "specifications": {
+        "wattage": "1200 W",
+        "usage": "Heavy",
+        "cooling": "Water-cooled",
+        "alarms": ["Lens contamination detected"]
+      },
+      "status": "Active"
+    }
+  ]
+  

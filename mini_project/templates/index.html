@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Machine Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-industry"></i> Industrial Machine Management</h1>
+            <p class="subtitle">Worker Interface</p>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <div class="card machine-usage">
+                    <h2><i class="fas fa-cogs"></i> Machine Usage</h2>
+                    <form id="usageForm">
+                        <div class="form-group">
+                            <label for="machineSelect">Select Machine:</label>
+                            <select id="machineSelect" required>
+                                <option value="">Choose a machine...</option>
+                                {% for machine in machines %}
+                                <option value="{{ machine.id }}">{{ machine.machine_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="purpose">Purpose:</label>
+                            <input type="text" id="purpose" required placeholder="What is the machine being used for?">
+                        </div>
+                        <div class="form-group">
+                            <label for="stage">Manufacturing Stage:</label>
+                            <input type="text" id="stage" required placeholder="Current manufacturing stage">
+                        </div>
+                        <div class="form-group">
+                            <label for="units">Units Produced:</label>
+                            <input type="number" id="units" required placeholder="Number of units">
+                        </div>
+                        <div class="form-group">
+                            <label for="unitType">Unit Type:</label>
+                            <select id="unitType" required>
+                                <option value="kg">Kilograms (kg)</option>
+                                <option value="pieces">Pieces</option>
+                                <option value="meters">Meters</option>
+                                <option value="liters">Liters</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn primary">Submit Usage Data</button>
+                    </form>
+                </div>
+
+                <div class="card error-report">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Report Error</h2>
+                    <form id="errorForm">
+                        <div class="form-group">
+                            <label for="errorMachine">Machine:</label>
+                            <select id="errorMachine" required>
+                                <option value="">Choose a machine...</option>
+                                {% for machine in machines %}
+                                <option value="{{ machine.id }}">{{ machine.machine_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="errorType">Error Type:</label>
+                            <select id="errorType" required>
+                                <option value="mechanical">Mechanical</option>
+                                <option value="electrical">Electrical</option>
+                                <option value="software">Software</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="errorDescription">Description:</label>
+                            <textarea id="errorDescription" required placeholder="Describe the error in detail"></textarea>
+                        </div>
+                        <button type="submit" class="btn danger">Report Error</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card machine-stats">
+                <h2><i class="fas fa-chart-bar"></i> Machine Statistics</h2>
+                <div id="statsContainer">
+                    <p class="placeholder">Select a machine to view its statistics</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

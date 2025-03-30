@@ -1,0 +1,197 @@
+[
+    {
+      "worker_id": "W-001",
+      "worker_name": "Rajesh Kumar",
+      "role": "Machine Operator",
+      "shift": "Night",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T22:15:00Z",
+          "activity": "Started machine",
+          "status": "Success"
+        },
+        {
+          "timestamp": "2024-03-22T23:30:00Z",
+          "activity": "Performed calibration",
+          "status": "Failure",
+          "error_code": "E-1003"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-002",
+      "worker_name": "Amit Sharma",
+      "role": "Welder",
+      "shift": "Day",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T09:45:00Z",
+          "activity": "Replaced nozzle",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-003",
+      "worker_name": "Priya Iyer",
+      "role": "Assembly Line Supervisor",
+      "shift": "Evening",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T18:20:00Z",
+          "activity": "Supervised assembly process",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-004",
+      "worker_name": "Suresh Reddy",
+      "role": "Hydraulic Engineer",
+      "shift": "Day",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T10:05:00Z",
+          "activity": "Checked hydraulic pressure",
+          "status": "Warning",
+          "note": "Pressure slightly lower than normal"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-005",
+      "worker_name": "Ravi Verma",
+      "role": "HVAC Technician",
+      "shift": "Night",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T23:55:00Z",
+          "activity": "Cleaned air filters",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-006",
+      "worker_name": "Ananya Desai",
+      "role": "Boiler Operator",
+      "shift": "Day",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T08:30:00Z",
+          "activity": "Checked pressure valves",
+          "status": "Failure",
+          "error_code": "E-201",
+          "note": "Pressure spike detected"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-007",
+      "worker_name": "Vinod Patil",
+      "role": "Pump Technician",
+      "shift": "Evening",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T19:00:00Z",
+          "activity": "Lubricated pump bearings",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-008",
+      "worker_name": "Deepak Nair",
+      "role": "Backup Generator Technician",
+      "shift": "Night",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T22:10:00Z",
+          "activity": "Performed routine startup test",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-009",
+      "worker_name": "Meena Joshi",
+      "role": "Drill Operator",
+      "shift": "Day",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T11:25:00Z",
+          "activity": "Replaced drill bit",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-010",
+      "worker_name": "Arjun Mehta",
+      "role": "Laser Cutting Specialist",
+      "shift": "Evening",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T18:50:00Z",
+          "activity": "Cleaned laser lens",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-011",
+      "worker_name": "Sunil Choudhary",
+      "role": "CNC Machine Supervisor",
+      "shift": "Night",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T21:00:00Z",
+          "activity": "Checked tool alignment",
+          "status": "Warning",
+          "note": "Minor tool deviation"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-012",
+      "worker_name": "Kavita Rao",
+      "role": "Quality Control Inspector",
+      "shift": "Day",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T12:15:00Z",
+          "activity": "Inspected assembled parts",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-013",
+      "worker_name": "Gopal Thakur",
+      "role": "Electrical Technician",
+      "shift": "Night",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T23:10:00Z",
+          "activity": "Voltage check",
+          "status": "Success"
+        }
+      ]
+    },
+    {
+      "worker_id": "W-014",
+      "worker_name": "Neha Bansal",
+      "role": "Safety Inspector",
+      "shift": "Evening",
+      "logs": [
+        {
+          "timestamp": "2024-03-22T17:40:00Z",
+          "activity": "Safety check",
+          "status": "Failure",
+          "error_code": "S-302",
+          "note": "Leakage detected"
+        }
+      ]
+    }
+  ]
+  
