@@ -1,0 +1,205 @@
+[
+  {
+    "id": "HVAC-001",
+    "machine_name": "HVAC Compressor Model-X",
+    "type": "Compressor",
+    "power_kw": 45.2,
+    "location": "HVAC Plant - Section A",
+    "status": "Operational",
+    "last_maintenance": "2024-03-10",
+    "issues": [
+      "Overheating",
+      "Vibration"
+    ],
+    "logs": [
+      "2024-03-12: Coolant replaced",
+      "2024-03-15: Unexpected downtime for 2 hours"
+    ]
+  },
+  {
+    "id": "HVAC-002",
+    "machine_name": "HVAC Cooling Tower CT-500",
+    "type": "Cooling Tower",
+    "power_usage": "120 kW",
+    "location": "HVAC Plant - Section B",
+    "maintenance_schedule": {
+      "next_due": "2024-06-15",
+      "last_serviced": "2024-02-28"
+    },
+    "errors": [
+      {
+        "code": "E102",
+        "desc": "Water flow low"
+      },
+      {
+        "code": "E201",
+        "desc": "Fan motor failure"
+      }
+    ]
+  },
+  {
+    "id": "HVAC-003",
+    "machine_name": "HVAC Air Handler AH-220",
+    "type": "Air Handler",
+    "power_kw": 10.5,
+    "location": "HVAC Plant - Section C",
+    "status": "Operational",
+    "last_maintenance": "2024-03-08",
+    "issues": [
+      "Duct blockage"
+    ],
+    "logs": [
+      "2024-03-10: Air filters replaced"
+    ]
+  },
+  {
+    "id": "HVAC-004",
+    "machine_name": "HVAC Chiller Unit CU-800",
+    "type": "Chiller",
+    "power_kw": 150.0,
+    "location": "HVAC Plant - Section D",
+    "status": "Operational",
+    "last_maintenance": "2024-03-01",
+    "issues": [
+      "Refrigerant leakage"
+    ],
+    "logs": [
+      "2024-03-05: Refrigerant topped up"
+    ]
+  },
+  {
+    "id": "HVAC-005",
+    "machine_name": "HVAC Heat Pump HP-300",
+    "type": "Heat Pump",
+    "power_kw": 50.0,
+    "location": "HVAC Plant - Section E",
+    "status": "Operational",
+    "last_maintenance": "2024-03-15",
+    "issues": [],
+    "logs": []
+  },
+  {
+    "id": "HVAC-006",
+    "machine_name": "HVAC Air Scrubber AS-400",
+    "type": "Air Scrubber",
+    "power_kw": 25.0,
+    "location": "HVAC Plant - Section F",
+    "status": "Under Maintenance",
+    "last_maintenance": "2024-03-20",
+    "issues": [
+      "Filter clogging"
+    ],
+    "logs": [
+      "2024-03-22: Filter replacement scheduled"
+    ]
+  },
+  {
+    "id": "HVAC-007",
+    "machine_name": "HVAC Duct Fan DF-600",
+    "type": "Duct Fan",
+    "power_kw": 12.5,
+    "location": "HVAC Plant - Section G",
+    "status": "Operational",
+    "last_maintenance": "2024-03-10",
+    "issues": [],
+    "logs": []
+  },
+  {
+    "id": "HVAC-008",
+    "machine_name": "HVAC Variable Speed Drive VSD-9",
+    "type": "Variable Speed Drive",
+    "power_kw": 30.0,
+    "location": "HVAC Plant - Section H",
+    "status": "Operational",
+    "last_maintenance": "2024-03-12",
+    "issues": [],
+    "logs": []
+  },
+  {
+    "id": "HVAC-009",
+    "machine_name": "HVAC Humidifier H-120",
+    "type": "Humidifier",
+    "power_kw": 5.0,
+    "location": "HVAC Plant - Section I",
+    "status": "Operational",
+    "last_maintenance": "2024-03-10",
+    "issues": [
+      "Water inlet valve malfunction"
+    ],
+    "logs": [
+      "2024-03-12: Water valve replaced"
+    ]
+  },
+  {
+    "id": "HVAC-010",
+    "machine_name": "HVAC Dehumidifier DH-300",
+    "type": "Dehumidifier",
+    "power_kw": 8.0,
+    "location": "HVAC Plant - Section J",
+    "status": "Under Maintenance",
+    "last_maintenance": "2024-03-20",
+    "issues": [
+      "Condensation blockage"
+    ],
+    "logs": []
+  },
+  {
+    "id": "HVAC-011",
+    "machine_name": "HVAC Refrigerant Recovery System RRS-5",
+    "type": "Refrigerant Recovery",
+    "power_kw": 15.0,
+    "location": "HVAC Plant - Section K",
+    "status": "Operational",
+    "last_maintenance": "2024-03-18",
+    "issues": [],
+    "logs": []
+  },
+  {
+    "id": "HVAC-012",
+    "machine_name": "HVAC Exhaust Fan EF-400",
+    "type": "Exhaust Fan",
+    "power_kw": 18.0,
+    "location": "HVAC Plant - Section L",
+    "status": "Operational",
+    "last_maintenance": "2024-03-10",
+    "issues": [],
+    "logs": []
+  },
+  {
+    "id": "HVAC-013",
+    "machine_name": "HVAC Steam Boiler SB-600",
+    "type": "Boiler",
+    "power_kw": 100.0,
+    "location": "HVAC Plant - Section M",
+    "status": "Operational",
+    "last_maintenance": "2024-02-28",
+    "issues": [
+      "Pressure fluctuation"
+    ],
+    "logs": [
+      "2024-03-01: Pressure valve replaced"
+    ]
+  },
+  {
+    "id": "HVAC-014",
+    "machine_name": "HVAC Air Conditioning Unit ACU-1200",
+    "type": "Air Conditioning",
+    "power_kw": 75.0,
+    "location": "HVAC Plant - Section N",
+    "status": "Operational",
+    "last_maintenance": "2024-03-10",
+    "issues": [],
+    "logs": []
+  },
+  {
+    "id": "HVAC-015",
+    "machine_name": "HVAC Filtration Unit FU-200",
+    "type": "Filtration Unit",
+    "power_kw": 10.0,
+    "location": "HVAC Plant - Section O",
+    "status": "Operational",
+    "last_maintenance": "2024-03-01",
+    "issues": [],
+    "logs": []
+  }
+]

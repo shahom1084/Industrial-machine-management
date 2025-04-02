@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Manager Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .selection {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow-x: auto;
+            display: none; /* Hidden by default */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Machine Manager Dashboard</h1>
+        
+        <!-- Dashboard Selection -->
+        <div class="selection">
+            <label for="dashboardSelect">Select Dashboard:</label>
+            <select id="dashboardSelect" onchange="fetchDashboard()">
+                <option value="">-- Select --</option>
+                <option value="efficiency">Machine Efficiency</option>
+                <option value="uptime">Machine Uptime</option>
+                <option value="errors">Number of Errors</option>
+                <option value="production_trend">Production Trend</option>
+                <option value="error_distribution">Error Type Distribution</option>
+                <option value="maintenance_replacement">Maintenance & Replacement</option>
+            </select>
+        </div>
+
+        <!-- Table for Data -->
+        <div class="table-container" id="dataTable">
+            <table id="dynamicTable">
+                <thead id="tableHead"></thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-container" id="chartContainer">
+            <img id="dashboardChart" src="" alt="Dashboard Chart">
+        </div>
+    </div>
+
+    <script>
+        function fetchDashboard() {
+            const dashboardType = document.getElementById('dashboardSelect').value;
+            const dataTable = document.getElementById('dataTable');
+            const chartContainer = document.getElementById('chartContainer');
+
+            if (!dashboardType) {
+                dataTable.style.display = 'none';
+                chartContainer.style.display = 'none';
+                return;
+            }
+
+            fetch(`http://localhost:5001/api/dashboard?type=${dashboardType}`)
+                .then(response => response.json())
+                .then(result => {
+                    const data = result.data;
+                    const chartSrc = result.chart;
+
+                    // Display chart
+                    document.getElementById('dashboardChart').src = chartSrc || '';
+                    chartContainer.style.display = 'block';
+
+                    // Dynamically generate table
+                    const thead = document.getElementById('tableHead');
+                    const tbody = document.getElementById('tableBody');
+                    thead.innerHTML = '';
+                    tbody.innerHTML = '';
+
+                    if (Object.keys(data).length === 0) {
+                        dataTable.style.display = 'none';
+                        return;
+                    }
+
+                    // Determine headers and rows based on dashboard type
+                    let headers = [];
+                    let rows = [];
+                    if (dashboardType === 'efficiency') {
+                        headers = ['Machine Name', 'Production Amount', 'Defectives Produced', 'Efficiency (%)'];
+                        rows = data.map(d => [d.machine_name, d.production_amount, d.defectives_produced, d.efficiency.toFixed(2)]);
+                    } else if (dashboardType === 'uptime') {
+                        headers = ['Machine Name', 'Uptime (hrs)', 'Downtime (hrs)'];
+                        rows = Object.entries(data).map(([machine, times]) => [machine, times.uptime.toFixed(2), times.downtime.toFixed(2)]);
+                    } else if (dashboardType === 'errors') {
+                        headers = ['Machine Name', 'Error Count'];
+                        rows = Object.entries(data).map(([machine, count]) => [machine, count]);
+                    } else if (dashboardType === 'production_trend') {
+                        headers = ['Date', 'Production Amount', 'Defectives Produced'];
+                        rows = Object.entries(data).map(([date, d]) => [date, d.production, d.defects]);
+                    } else if (dashboardType === 'error_distribution') {
+                        headers = ['Error Type', 'Count'];
+                        rows = Object.entries(data).map(([error, count]) => [error, count]);
+                    } else if (dashboardType === 'maintenance_replacement') {
+                        headers = ['Machine Name', 'Status', 'Errors Reported', 'Error Frequency', 'Maintenance Date', 'Replacement Date'];
+                        rows = Object.entries(data).map(([machine, d]) => [
+                            machine, d.status, d.errors_reported, d.error_freq, d.maintenance_date, d.replacement_date
+                        ]);
+                    }
+
+                    // Populate table headers
+                    const trHead = document.createElement('tr');
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        th.textContent = header;
+                        trHead.appendChild(th);
+                    });
+                    thead.appendChild(trHead);
+
+                    // Populate table rows
+                    rows.forEach(rowData => {
+                        const tr = document.createElement('tr');
+                        rowData.forEach(cellData => {
+                            const td = document.createElement('td');
+                            td.textContent = cellData;
+                            tr.appendChild(td);
+                        });
+                        tbody.appendChild(tr);
+                    });
+
+                    dataTable.style.display = 'block';
+                })
+                .catch(error => console.error('Error fetching dashboard:', error));
+        }
+
+        // Initial call to hide table and chart until selection
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchDashboard();
+        });
+    </script>
+</body>
+</html>
